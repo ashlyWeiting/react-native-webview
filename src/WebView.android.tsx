@@ -77,6 +77,7 @@ const WebViewComponent = forwardRef<{}, AndroidWebViewProps>(
       setBuiltInZoomControls = true,
       setDisplayZoomControls = false,
       nestedScrollEnabled = false,
+      focusEnabled = true,
       startInLoadingState,
       onNavigationStateChange,
       onLoadStart,
@@ -312,6 +313,7 @@ const WebViewComponent = forwardRef<{}, AndroidWebViewProps>(
         setBuiltInZoomControls={setBuiltInZoomControls}
         setDisplayZoomControls={setDisplayZoomControls}
         nestedScrollEnabled={nestedScrollEnabled}
+        focusEnabled={focusEnabled}
         injectedJavaScriptObject={JSON.stringify(injectedJavaScriptObject)}
         {...nativeConfig?.props}
       />

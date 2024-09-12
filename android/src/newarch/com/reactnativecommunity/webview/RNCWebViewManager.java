@@ -259,6 +259,11 @@ public class RNCWebViewManager extends ViewGroupManager<RNCWebViewWrapper>
         mRNCWebViewManagerImpl.setNestedScrollEnabled(view, value);
     }
 
+    @ReactProp(name = "focusEnabled")
+    public void setFocusEnabled(RNCWebViewWrapper view, boolean value) {
+        mRNCWebViewManagerImpl.setFocusEnabled(view, value);
+    }
+
     @Override
     @ReactProp(name = "overScrollMode")
     public void setOverScrollMode(RNCWebViewWrapper view, @Nullable String value) {

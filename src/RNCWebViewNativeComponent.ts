@@ -164,6 +164,7 @@ export interface NativeProps extends ViewProps {
   minimumFontSize?: Int32;
   mixedContentMode?: WithDefault<'never' | 'always' | 'compatibility', 'never'>;
   nestedScrollEnabled?: boolean;
+  focusEnabled?: boolean;
   onContentSizeChange?: DirectEventHandler<WebViewNativeEvent>;
   onRenderProcessGone?: DirectEventHandler<WebViewRenderProcessGoneEvent>;
   overScrollMode?: string;

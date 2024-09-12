@@ -68,6 +68,7 @@ public class RNCWebView extends WebView implements LifecycleEventListener {
     private OnScrollDispatchHelper mOnScrollDispatchHelper;
     protected boolean hasScrollEvent = false;
     protected boolean nestedScrollEnabled = false;
+    protected boolean focusEnabled = false;
     protected ProgressChangedFilter progressChangedFilter;
 
     /**
@@ -102,6 +103,10 @@ public class RNCWebView extends WebView implements LifecycleEventListener {
         this.nestedScrollEnabled = nestedScrollEnabled;
     }
 
+    public void setFocusEnabled(boolean focusEnabled) {
+        this.focusEnabled = focusEnabled;
+    }
+
     @Override
     public void onHostResume() {
         // do nothing
@@ -116,6 +121,14 @@ public class RNCWebView extends WebView implements LifecycleEventListener {
     public void onHostDestroy() {
         cleanupCallbacksAndDestroy();
     }
+
+    @Override
+    public boolean requestFocus(int direction, Rect previouslyFocusedRect) {
+        if (this.focusEnabled == false) {
+            return false;
+        }
+        return super.requestFocus(direction, previouslyFocusedRect);
+    }    
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {

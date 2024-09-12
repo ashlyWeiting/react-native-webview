@@ -1118,6 +1118,15 @@ export interface AndroidWebViewProps extends WebViewSharedProps {
   nestedScrollEnabled?: boolean;
 
   /**
+   * Allow focusing the WebView.
+   * Default to false
+   *
+   * @platform android
+   */
+  focusEnabled?: boolean;
+
+
+  /**
    * Sets the minimum font size.
    * A non-negative integer between 1 and 72. Any number outside the specified range will be pinned.
    * Default is 8.

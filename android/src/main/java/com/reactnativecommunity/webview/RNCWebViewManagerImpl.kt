@@ -655,6 +655,11 @@ class RNCWebViewManagerImpl {
         view.nestedScrollEnabled = value
     }
 
+    fun setFocusEnabled(viewWrapper: RNCWebViewWrapper, value: Boolean) {
+        val view = viewWrapper.webView
+        view.focusEnabled = value
+    }
+
     fun setOverScrollMode(viewWrapper: RNCWebViewWrapper, overScrollModeString: String?) {
         val view = viewWrapper.webView
         view.overScrollMode = when (overScrollModeString) {
